@@ -1,10 +1,12 @@
 package com.example.demo.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@Data
 @NoArgsConstructor
 @Entity
 @Table(name = "Tramite")
@@ -14,8 +16,8 @@ public class Tramite {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "numero")
-    private String numero;
+    @Column(name = "radicado")
+    private String radicado;
 
     @Column(name = "año")
     private String año;
@@ -26,18 +28,14 @@ public class Tramite {
     @Column(name = "descripcion")
     private String descripcion;
 
-    @ManyToOne
-    @JsonIgnoreProperties(value = "Tramite", allowSetters = true)
     @JoinColumn(name = "solicitante")
-    private Persona solicitante;
+    private Long solicitante;
 
-    @ManyToOne
-    @JsonIgnoreProperties(value = "Tramite", allowSetters = true)
     @JoinColumn(name = "funcionario")
-    private Empleado funcionario;
+    private Long funcionario;
 
-    public Tramite(String numero, String año, String nombre, String descripcion, Persona solicitante, Empleado funcionario) {
-        this.numero = numero;
+    public Tramite(String radicado, String año, String nombre, String descripcion, Long solicitante, Long funcionario) {
+        this.radicado = radicado;
         this.año = año;
         this.nombre = nombre;
         this.descripcion = descripcion;

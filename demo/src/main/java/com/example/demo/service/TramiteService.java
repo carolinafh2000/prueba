@@ -16,7 +16,7 @@ public class TramiteService {
     TramiteRepository tramiteRepository;
 
     public List<Tramite> obtenerTramites(){
-        return  tramiteRepository.findAll();
+        return tramiteRepository.findAll();
     }
 
     public void guardarTramite(Tramite tramite){

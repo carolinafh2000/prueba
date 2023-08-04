@@ -23,8 +23,7 @@ public class PersonaController {
 
     @PostMapping("/persona")
     public ResponseEntity<?> crearPersona(@RequestBody PersonaDto personaDto){
-
-        Persona persona = new Persona(personaDto.getTipoIdentificacion(), personaDto.getIdentificacion(), personaDto.getNombre(), personaDto.getApellido(), personaDto.getTelefono(), personaDto.getDireccion(), personaDto.getEmail());
+        Persona persona = new Persona(personaDto.getTipoidentificacion(), personaDto.getIdentificacion(), personaDto.getNombre(), personaDto.getApellido(), personaDto.getTelefono(), personaDto.getDireccion(), personaDto.getEmail());
         personaService.guardarPersona(persona);
         return new ResponseEntity<>(HttpStatus.CREATED);
 

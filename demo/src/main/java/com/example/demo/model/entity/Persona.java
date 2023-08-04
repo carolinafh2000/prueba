@@ -16,10 +16,8 @@ public class Persona {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JsonIgnoreProperties(value = "Persona", allowSetters = true)
-    @JoinColumn(name = "tipoIdentificacion")
-    private TipoIdentificacion tipoIdentificacion;
+    @JoinColumn(name = "tipoidentificacion")
+    private Long tipoidentificacion;
 
     @Column(name = "identificacion")
     private String identificacion;
@@ -39,8 +37,8 @@ public class Persona {
     @Column(name = "email")
     private String email;
 
-    public Persona(TipoIdentificacion tipoIdentificacion, String identificacion, String nombre, String apellido, String telefono, String direccion, String email) {
-        this.tipoIdentificacion = tipoIdentificacion;
+    public Persona(Long tipoIdentificacion, String identificacion, String nombre, String apellido, String telefono, String direccion, String email) {
+        this.tipoidentificacion = tipoIdentificacion;
         this.identificacion = identificacion;
         this.nombre = nombre;
         this.apellido = apellido;

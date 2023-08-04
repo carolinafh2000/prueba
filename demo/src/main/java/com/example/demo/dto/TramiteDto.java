@@ -8,13 +8,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class TramiteDto {
+public class TramiteDto implements Serializable {
 
-    private String numero;
+    private String radicado;
 
     private String año;
 
@@ -22,7 +23,7 @@ public class TramiteDto {
 
     private String descripcion;
 
-    private Persona solicitante;
+    private Long solicitante;
 
-    private Empleado funcionario;
+    private Long funcionario;
 }

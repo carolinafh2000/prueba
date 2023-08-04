@@ -9,13 +9,14 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import java.io.Serializable;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class PersonaDto {
+public class PersonaDto implements Serializable {
 
-    private TipoIdentificacion tipoIdentificacion;
+    private Long tipoidentificacion;
 
     private String identificacion;
 

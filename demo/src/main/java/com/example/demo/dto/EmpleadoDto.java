@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.io.Serializable;
 import java.util.Date;
 
 
@@ -14,7 +15,7 @@ import java.util.Date;
 @Data
 @Getter
 @Setter
-public class EmpleadoDto {
+public class EmpleadoDto implements Serializable {
 
     private String identificacion;
 

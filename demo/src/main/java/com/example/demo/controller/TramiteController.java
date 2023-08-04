@@ -23,10 +23,8 @@ public class TramiteController {
 
     @PostMapping("/tramite")
     public ResponseEntity<?> crearTramite(@RequestBody TramiteDto tramiteDto){
-        Persona persona = new Persona();
-        Empleado empleado = new Empleado();
 
-        Tramite tramite = new Tramite(tramiteDto.getNumero(), tramiteDto.getAño(), tramiteDto.getNombre(), tramiteDto.getDescripcion(), tramiteDto.getSolicitante(), tramiteDto.getFuncionario());
+        Tramite tramite = new Tramite(tramiteDto.getRadicado(), tramiteDto.getAño(), tramiteDto.getNombre(), tramiteDto.getDescripcion(), tramiteDto.getSolicitante(), tramiteDto.getFuncionario());
         tramiteService.guardarTramite(tramite);
         return new ResponseEntity<>(HttpStatus.CREATED);
 
